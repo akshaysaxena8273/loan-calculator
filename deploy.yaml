@@ -1,0 +1,22 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: loan-calculator-pipeline
+spec:
+  stages:
+    - name: prod
+      targetId: loan-calculator-target
+      deployParameters:
+        images:
+          - 'gcr.io/testcicd0811/loan-calculator'
+
+---
+
+apiVersion: cloud.google.com/v1
+kind: Target
+metadata:
+  name: loan-calculator-target
+spec:
+  gke:
+    cluster: loan-calculator-cluster
+    location: asia-south1-a
