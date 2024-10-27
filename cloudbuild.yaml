@@ -5,5 +5,8 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/testcicd0811/loan-calculator']
 
+options:
+  default_logs_bucket_behavior: 'REGIONAL_USER_OWNED_BUCKET'  # Use user-owned bucket for logs
+
 images:
   - 'gcr.io/testcicd0811/loan-calculator'
