@@ -6,7 +6,7 @@ steps:
     args: ['push', 'gcr.io/testcicd0811/loan-calculator']
 
 options:
-  default_logs_bucket_behavior: 'REGIONAL_USER_OWNED_BUCKET'  # Use user-owned bucket for logs
+  logging: 'CLOUD_LOGGING_ONLY'  # This setting is optional, adjust as needed
 
 images:
   - 'gcr.io/testcicd0811/loan-calculator'
